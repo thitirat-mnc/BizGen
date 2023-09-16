@@ -8,7 +8,7 @@ An application built with Streamlit to assist you in generating innovative busin
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Explore the app](#explore_the_app)
+- [Explore the app](#explore-the-app)
 - [Disclaimer](#disclaimer)
 
 ## Introduction 
