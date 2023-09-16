@@ -8,7 +8,7 @@ An application built with Streamlit to assist you in generating innovative busin
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Explore the app](#explore-the-app)
+- [Explore](#explore)
 - [Disclaimer](#disclaimer)
 
 ## Introduction 
@@ -58,7 +58,7 @@ Certainly, let's provide a concise usage guide based on the code you provided:
 
 7. **Explore and Refine**: Feel free to explore more business ideas and refine your concepts as needed. The application is designed to help you brainstorm and develop innovative business concepts.
 
-## Explore the app
+## Explore
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bizgen.streamlit.app/)
 
 ## Disclaimer
