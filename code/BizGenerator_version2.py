@@ -17,8 +17,9 @@ st.set_page_config(
 with st.sidebar:
     st.markdown("# Sparks New Business Ideas👩‍💼📈")
     st.markdown("""
-        Leverage the OpenAI API, along with the Langchain Python library, to generate a list of business ideas consisting of
-        business names, models, visions, missions, and competitive advantages based on the context given.
+        Leverage the OpenAI API, along with the Langchain Python library, to generate a list of business name, 
+        competitive advantages and implementation plan
+        based on the context given.
         """)
     st.markdown("---")
     "[Get Your OpenAI API Key](https://platform.openai.com/account/api-keys)"
