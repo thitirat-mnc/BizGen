@@ -8,6 +8,7 @@ An application built with Streamlit to assist you in generating innovative busin
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+- [Explore the app](#explore_the_app)
 - [Disclaimer](#disclaimer)
 
 ## Introduction 
@@ -56,6 +57,9 @@ Certainly, let's provide a concise usage guide based on the code you provided:
 6. **Generate Plans**: If you wish to create implementation plans for the generated ideas, click the corresponding button labeled "Generate plan for Business [X]". The application will provide you with detailed plans for executing each business concept.
 
 7. **Explore and Refine**: Feel free to explore more business ideas and refine your concepts as needed. The application is designed to help you brainstorm and develop innovative business concepts.
+
+## Explore the app
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bizgen.streamlit.app/)
 
 ## Disclaimer
 Please note that BizGenerator is a tool designed to assist with brainstorming and idea generation. It does not guarantee the success or feasibility of the generated business ideas. It's essential to conduct thorough research and validation before pursuing any business concept.
