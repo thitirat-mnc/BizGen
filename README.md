@@ -1,4 +1,4 @@
-# BizGenerator 💰🏢 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bizgenerator.streamlit.app/)
+# BizGenerator💰🏢  [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bizgenerator.streamlit.app/)
 An application built with Streamlit to assist you in generating innovative business ideas. This tool combines the power of OpenAI's GPT-3.5 Turbo model with the Langchain Python library, offering a simple and intuitive way to spark your entrepreneurial creativity.
 
 ## 🔗 Table of Contents
