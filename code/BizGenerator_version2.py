@@ -64,9 +64,13 @@ else:
 
         for i in range(num_ideas):
             # Define the prompt template for generating business ideas
-            business_template = f"""You are a business mentor. Given the context of business, your job is to help your mentee \
+            business_template = f"""
+            You are a business mentor. Given the context of business, your job is to help your mentee \
             generate a new business with a unique business name and a strong competitive advantage for that business. \
-            For this business, the answer must be within 3 sentences. 
+            For this business, the answer must be within 100 words. 
+            Make sure that the answer is in the same language as the language of the context that the user type in.\
+
+            
             context: {text}
             This is business idea {i + 1}:
             """
@@ -103,7 +107,9 @@ else:
                 # Define the prompt template for generating plan
                 plan_template = f"""
                 You are a talented business consultant. Your job is to write a implementation plan for business idea {i + 1}.
-                For this business, the answer must be within 2 sentences. 
+                For this business, the answer must be within 100 words. 
+                Make sure that the answer is in the same language as the language of the Business Idea {i + 1}.
+
                 Business Idea {i + 1}:
                 {business}
                 implementation plan from a business consultant:
