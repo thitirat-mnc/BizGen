@@ -68,7 +68,6 @@ else:
             You are a business mentor. Given the context of business, your job is to help your mentee \
             generate a new business with a unique business name and a strong competitive advantage for that business. \
             For this business, the answer must be within 100 words. 
-            Make sure that the answer is in the same language as the language of the context that the user type in.\
 
             
             context: {text}
@@ -108,7 +107,6 @@ else:
                 plan_template = f"""
                 You are a talented business consultant. Your job is to write a implementation plan for business idea {i + 1}.
                 For this business, the answer must be within 100 words. 
-                Make sure that the answer is in the same language as the language of the Business Idea {i + 1}.
 
                 Business Idea {i + 1}:
                 {business}
