@@ -17,7 +17,7 @@ st.set_page_config(
 with st.sidebar:
     st.markdown("# Sparks New Business Ideas👩‍💼📈")
     st.markdown("""
-        Leverage the OpenAI API, along with the Langchain Python library, to generate a list of business names, 
+        Leverage the OpenAI API, along with the Langchain Python library, to generate a list of business names, visions, missions, 
         competitive advantages and specific implementation plan
         based on the context given.
         """)
@@ -65,14 +65,22 @@ else:
         for i in range(num_ideas):
             # Define the prompt template for generating business ideas
             business_template = f"""
-            You are a business mentor. Given the context of business, your job is to help your mentee \
-            generate a new business with a unique business name and a strong competitive advantage for that business. \
-            For this business, the answer must be within 100 words. 
+                Imagine you are a business mentor. Your mission is to guide your mentee in crafting a well-rounded business concept \
+                that encompasses a distinctive business name, a clear vision, a compelling mission statement, and a strong competitive advantage. \
+                Encourage them to think outside the box and let their creativity flow freely. \
+                Your response should be structured under the following topics, each not exceeding 100 words, \
+                and should be in the same language as the context provided:
 
-            
-            context: {text}
-            This is business idea {i + 1}:
-            """
+                Context: {text}
+                
+                Business Name:
+                
+                Vision:
+                
+                Mission:
+                
+                Competitive Advantage:
+                """
 
             business_prompt_template = PromptTemplate(
                 input_variables=[],
@@ -88,56 +96,56 @@ else:
             # Generate business idea
             business_output = business_chain({})
             business_ideas.append(business_output["business_info"])
-
-        # Remove the "Generating ideas..." message once results are ready
-        if generating_message:
-            generating_message.empty()
-
-        st.markdown("---")
-        st.header("Business Ideas Generated")
-
+        
         for i, business in enumerate(business_ideas):
             if i > 0:
                 st.markdown("---")  # Add a separator between ideas
             st.subheader(f"🔗 Business {i + 1}")
             st.write(business)
 
-            if st.button(f"Generate plan for Business {i + 1}"):
-                # Define the prompt template for generating plan
-                plan_template = f"""
-                You are a talented business consultant. Your job is to write a implementation plan for business idea {i + 1}.
-                For this business, the answer must be within 100 words. 
+            plan_template = f"""
+                As an experienced business consultant, your task is to create a concise implementation plan for Business Idea {i + 1}. \
+                Your response, limited to 100 words, should be in the same language as the context.
 
                 Business Idea {i + 1}:
                 {business}
-                implementation plan from a business consultant:
+
+                Present your response in a numbered list format, delineating each step of the implementation plan. \
+                Imagine you are providing a clear, actionable strategy as a business consultant:
+
                 """
 
-                plan_prompt_template = PromptTemplate(
-                    input_variables=[],
-                    template=plan_template,
-                    output_variables=["plan"]
-                )
+            plan_prompt_template = PromptTemplate(
+                input_variables=[],
+                template=plan_template,
+                output_variables=["plan"]
+            )
 
-                # Create the Langchain chain for generating plan
-                consultant_chain = LLMChain(llm=llm, prompt=plan_prompt_template, output_key="plan")
+            # Create the Langchain chain for generating plan
+            consultant_chain = LLMChain(llm=llm, prompt=plan_prompt_template, output_key="plan")
 
-                # This is the overall chain where we run business generation and plan generation in sequence
-                overall_chain = SequentialChain(
-                    chains=[business_chain, consultant_chain],
-                    input_variables=[],
-                    output_variables=[
-                        "business_info",
-                        "plan"
-                    ],
-                    verbose=True
-                )
+            # This is the overall chain where we run business generation and plan generation in sequence
+            overall_chain = SequentialChain(
+                chains=[business_chain, consultant_chain],
+                input_variables=[],
+                output_variables=[
+                    "business_info",
+                    "plan"
+                ],
+                verbose=True
+            )
 
-                # Generate plan using consultant_chain
-                plan_output = overall_chain({})
-
-                st.subheader(f"📃 Plan for Business {i + 1}")
+            # Generate plan using consultant_chain
+            plan_output = overall_chain({})
+            with st.expander(f"📃 Plan for Business {i + 1}"):    
                 st.write(plan_output["plan"])
+
+        # Remove the "Generating ideas..." message once results are ready
+        if generating_message:
+            generating_message.empty()
+
         st.markdown("---")
         st.markdown("Feel free to explore more business ideas and refine your concepts!")
         
+
+    
