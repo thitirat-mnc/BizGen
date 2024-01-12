@@ -23,7 +23,7 @@ with st.sidebar:
         """)
     st.markdown("---")
     "[Get Your OpenAI API Key](https://platform.openai.com/account/api-keys)"
-    "[📁 View Source Code](https://github.com/thitirat-mnc/BizGenerator)"
+    "[📁 View Source Code](https://github.com/thitirat-mnc/BizGen)"
 
 # Define the Langchain model
 llm_model = "gpt-3.5-turbo"
